@@ -13,7 +13,7 @@
         <div class="ball"></div>
     </div>
 
-    <pre class="output"></pre>
+    <!-- <pre class="output"></pre> -->
 </body>
 <script>
     var ball = document.querySelector('.ball');
@@ -24,11 +24,13 @@
     var maxY = garden.clientHeight - ball.clientHeight;
 
     function handleOrientation(event) {
-        var x = event.beta;  // In degree in the range [-180,180)
-        var y = event.gamma; // In degree in the range [-90,90)
+        var r = event.absolute; // Boolean rotation data [true,false]
+        var x = event.beta;  // Rotation around the x axis (left to right) [-180,180]
+        var y = event.gamma; // Rotation around the y axis (top to down) [-90,90]
+        var z = event.alpha; // Rotation around the z axis (rotate?) [0,360]
 
-        output.textContent = `beta : ${x}\n`;
-        output.textContent += `gamma: ${y}\n`;
+        // output.textContent = `beta : ${x}\n`;
+        // output.textContent += `gamma: ${y}\n`;
 
         // Because we don't want to have the device upside down
         // We constrain the x value to the range [-90,90]
