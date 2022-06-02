@@ -1,6 +1,9 @@
 body {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: black;
 }
 
 svg:not(:root) {
@@ -23,18 +26,21 @@ svg:not(:root) {
     border-radius: 2px;
 }
 
-/* .playable-buttons {
+.playable-buttons {
     text-align: right;
     width: 90%;
+    height: 90%;
     padding: 5px 10px 5px 26px;
-} */
+}
 
 .garden {
-    position: relative;
-    width: 100%;
-    height: 1000%;
+    position: absolute;
+    width: 98.5%;
+    height: 98.5%;
     border: 5px solid #CCC;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .ball {
