@@ -11,7 +11,7 @@
 <body>
     <div class="left">
     </div>
-    <div class="right" background="">
+    <div class="right">
     </div>
     <div class="info">
         <pre class="output"></pre>
@@ -39,7 +39,7 @@
         output.textContent += `gamma: ${y}\n`;
 
         if (x > 5) {
-            (document.getElementsByClassName("right")).background = orange;
+            (document.getElementsByClassName("right")).style.background = orange;
         };
 
         // Because we don't want to have the device upside down
