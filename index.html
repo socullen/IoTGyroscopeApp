@@ -15,7 +15,6 @@
     </div>
     <div class="info">
         <pre class="output"></pre>
-        <p>dang</p>
     </div>
 
 </body>
@@ -37,10 +36,10 @@
         var z = event.alpha; // Rotation around the z axis (rotate?) [0,360]
 
         output.textContent = `beta : ${x}\n`;
-        output.textContent += `gamma: ${y}\n`;
+        output.textContent = `gamma: ${y}\n`;
 
         if (x > 5) {
-            (document.getElementById("right")).background = rgb(255, 149, 0);
+            (document.getElementById("right")).background = orange;
         };
 
         // Because we don't want to have the device upside down
