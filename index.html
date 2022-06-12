@@ -9,15 +9,14 @@
 </head>
 
 <body>
-    <!-- <div class="garden">
-        <div class="ball"></div>
-    </div> -->
     <div class="left">
     </div>
     <div class="right">
     </div>
+    <div class="info">
+        <pre class="output"></pre>
+    </div>
 
-    <pre class="output"></pre>
 </body>
 <script>
     // const Protocol = require('azure-iot-device-http').Http;
@@ -25,8 +24,6 @@
     // const Message = require('azure-iot-device').Message;
     // const deviceConnectionString = process.env.IOTHUB_DEVICE_CONNECTION_STRING;
 
-    var ball = document.querySelector('.ball');
-    var garden = document.querySelector('.garden');
     var output = document.querySelector('.output');
     var left = document.querySelector('.left');
     var right = document.querySelector('.right');
