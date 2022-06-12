@@ -3,7 +3,7 @@ body {
     margin: 0px;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: white;
 }
 
 svg:not(:root) {
@@ -35,8 +35,8 @@ svg:not(:root) {
 
 .garden {
     position: absolute;
-    width: 98.5%;
-    height: 98.5%;
+    width: 50%;
+    height: 50%;
     border: 5px solid #CCC;
     border-radius: 10px;
     display: flex;
