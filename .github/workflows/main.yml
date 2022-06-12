@@ -24,4 +24,4 @@ jobs:
     steps:
       - name: Set Connection String
         env:
-          ENGINE_API_KEY: ${{ secrets.IOTHUB_DEVICE_CONNECTION_STRING }}
+          IOTHUB_DEVICE_CONNECTION_STRING: ${{ secrets.IOTHUB_DEVICE_CONNECTION_STRING }}
