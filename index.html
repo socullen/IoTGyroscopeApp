@@ -12,6 +12,10 @@
     <div class="garden">
         <div class="ball"></div>
     </div>
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
 
     <pre class="output"></pre>
 </body>
@@ -24,6 +28,8 @@
     var ball = document.querySelector('.ball');
     var garden = document.querySelector('.garden');
     var output = document.querySelector('.output');
+    var left = document.querySelector('.left');
+    var right = document.querySelector('.right');
 
     var maxX = garden.clientWidth - ball.clientWidth;
     var maxY = garden.clientHeight - ball.clientHeight;
@@ -36,7 +42,6 @@
 
         output.textContent = `beta : ${x}\n`;
         output.textContent += `gamma: ${y}\n`;
-        output.textContent += `alpha: ${z}\n`;
 
         // Because we don't want to have the device upside down
         // We constrain the x value to the range [-90,90]

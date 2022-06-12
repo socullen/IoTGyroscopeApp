@@ -52,3 +52,19 @@ svg:not(:root) {
     background: green;
     border-radius: 100%;
 }
+
+.left {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 20%;
+    background: green;
+}
+
+.right {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 20%;
+    background: blue;
+}
