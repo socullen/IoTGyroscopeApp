@@ -3,7 +3,7 @@ body {
     margin: 0px;
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: black;
 }
 
 svg:not(:root) {
@@ -59,6 +59,8 @@ svg:not(:root) {
     height: 100%;
     width: 20%;
     background: green;
+    display: flex;
+    justify-content: center;
 }
 
 .right {
@@ -67,4 +69,6 @@ svg:not(:root) {
     height: 100%;
     width: 20%;
     background: blue;
+    display: flex;
+    justify-content: center;
 }
