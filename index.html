@@ -9,11 +9,14 @@
 </head>
 
 <body>
-    <!-- <div class="left">
-    </div> -->
+    <div class="left">
+    </div>
     <div class="right">
     </div>
-    <pre class="output"></pre>
+    <div class="info">
+        <pre class="output"></pre>
+        <p>dang</p>
+    </div>
 
 </body>
 <script>
@@ -25,6 +28,7 @@
     var output = document.querySelector('.output');
     var left = document.querySelector('.left');
     var right = document.querySelector('.right');
+    var output = document.querySelector('.info');
 
     var maxX = garden.clientWidth - ball.clientWidth;
     var maxY = garden.clientHeight - ball.clientHeight;
@@ -39,7 +43,7 @@
         output.textContent += `gamma: ${y}\n`;
 
         if (x > 5) {
-            (document.getElementById("right")).background = rgb(0, 0, 133);
+            (document.getElementById("right")).background = rgb(255, 149, 0);
         };
 
         // Because we don't want to have the device upside down
