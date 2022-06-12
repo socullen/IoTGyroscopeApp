@@ -54,12 +54,11 @@
         ball.style.left = (maxX * x / 180 - 10) + "px";
     }
 
-    function generateMessage() {
-        const data = JSON.stringify({ deviceId: 'myPhone', movement: z, input: x });
-        const message = new Message(data);
-        message.properties.add('temperatureAlert', (temperature > 28) ? 'true' : 'false');
-        return message;
-    }
+    // function generateMessage() {
+    //     const data = JSON.stringify({ deviceId: 'myPhone', movement: 'z', input: 'x' });
+    //     const message = new Message(data);
+    //     return message;
+    // }
 
     window.addEventListener('deviceorientation', handleOrientation);
 </script>
