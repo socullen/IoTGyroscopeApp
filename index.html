@@ -14,7 +14,7 @@
     <div class="right">
     </div>
     <div class="info">
-        <pre class="output"></pre>
+        <p class="output"></p>
     </div>
 
 </body>
@@ -35,10 +35,10 @@
         var y = event.gamma; // Rotation around the y axis (top to down) [-90,90]
         var z = event.alpha; // Rotation around the z axis (rotate?) [0,360]
 
-        output.textContent = `beta : ${x}\n`;
-        output.textContent += `gamma: ${y}\n`;
+        output.textContent += `beta : ${x}\n`;
+        // output.textContent += `gamma: ${y}\n`;
 
-        if (x > 5) {
+        if (Math.round(x) > 5) {
             (document.getElementsByClassName(".right")).style.background = orange;
         };
 
