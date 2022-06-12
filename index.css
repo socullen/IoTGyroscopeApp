@@ -3,7 +3,7 @@ body {
     margin: 0px;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: white;
 }
 
 svg:not(:root) {
