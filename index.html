@@ -39,7 +39,12 @@
         // output.textContent += `gamma: ${y}\n`;
 
         if (x > 5) {
-            document.getElementById("right").style.background = "orange";
+            document.getElementById("left").style.background = "red";
+        } else if (x < -5) {
+            document.getElementById("right").style.background = "blue";
+        } else {
+            document.getElementById("left").style.background = none;
+            document.getElementById("right").style.background = none; 
         }
         // Because we don't want to have the device upside down
         // We constrain the x value to the range [-90,90]
