@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="left">
+    <div class="left" id="left">
     </div>
     <div class="right" id="right">
     </div>
@@ -38,11 +38,11 @@
         output.textContent = `beta : ${x}\n`;
         // output.textContent += `gamma: ${y}\n`;
 
-        if (x > 5) {
-            document.getElementById("left").style.background = "yellow";
-        } else if (x < -5) {
-            document.getElementById("right").style.background = "blue";
-        } else {
+        if (x < -5) {
+            document.getElementById("right").style.background = "yellow";
+        } else if (x > 5) {
+            document.getElementById("left").style.background = "blue";
+        } while (x >= -5 && x >= 5) {
             document.getElementById("left").style.background = "rgba(117, 0, 0, 1)";
             document.getElementById("right").style.background = "rgba(0, 91, 110, 1)"; 
         }
