@@ -17,6 +17,8 @@ function handleOrientation(event) {
     output.textContent = `beta : ${x}\n`;
     // output.textContent += `gamma: ${y}\n`;
 
+    console.log("getting into function?")
+
     if (x < -5) {
         document.getElementById("right").style.background = "rgba(0,47,57,1)";
     } else if (x > 5) {
