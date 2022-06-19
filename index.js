@@ -45,6 +45,7 @@ function sendMessage() {
     const data = JSON.stringify({ direction: direc, fire: fire });
     const message = new Message(data);
     client.sendEvent(message);
+    fire = false;
 }
 
 function shoot() {

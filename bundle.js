@@ -1,10 +1,11 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+(function (process){(function (){
 const Protocol = require('azure-iot-device-http').Http;
 // const Client = require('azure-iot-device-http').clientFromConnectionString;
 const Client = require('azure-iot-device').Client;
 const Message = require('azure-iot-device').Message;
-// const deviceString = process.env.DEVICE_CONNECTION_STRING;
-const connectionString = "HostName=xelaaziothub.azure-devices.net;DeviceId=myPhone;SharedAccessKey=c5I3hBNgT2JLQVTj9BuVmOzoTXu6+lOJKihc0NwO1ic=";
+const connectionString = process.env.DEVICE_CONNECTION_STRING;
+// const connectionString = "";
 let client = Client.fromConnectionString(connectionString, Protocol);
 // var client = clientFromConnectionString(connectionString);
 var fire = false;
@@ -14,11 +15,6 @@ var left = document.querySelector('.left');
 var right = document.querySelector('.right');
 var output = document.querySelector('.info');
 
-// client.on('connect', connectHandler);
-// client.on('error', errorHandler);
-// client.on('disconnect', disconnectHandler);
-// client.on('message', messageHandler);
-
 function handleOrientation(event) {
     var r = event.absolute; // Boolean rotation data [true,false]
     var x = event.beta;  // Rotation around the x axis (left to right) [-180,180]
@@ -26,7 +22,6 @@ function handleOrientation(event) {
     var z = event.alpha; // Rotation around the z axis (rotate?) [0,360]
 
     output.textContent = `beta : ${x}\n`;
-    // output.textContent += `gamma: ${y}\n`;
 
     console.log("getting into function?")
 
@@ -52,11 +47,11 @@ function sendMessage() {
     const data = JSON.stringify({ direction: direc, fire: fire });
     const message = new Message(data);
     client.sendEvent(message);
+    fire = false;
 }
 
 function shoot() {
     console.log("works??");
-    // fire = true;
     fire = true;
     direc = 1;
     sendMessage();
@@ -65,7 +60,8 @@ function shoot() {
 document.getElementById('info').addEventListener('click', event => shoot());
 
 window.addEventListener('deviceorientation', handleOrientation);
-},{"azure-iot-device":106,"azure-iot-device-http":105}],2:[function(require,module,exports){
+}).call(this)}).call(this,require('_process'))
+},{"_process":299,"azure-iot-device":106,"azure-iot-device-http":105}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
