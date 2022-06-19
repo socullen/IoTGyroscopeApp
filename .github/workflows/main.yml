@@ -19,10 +19,21 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [15.x, 17.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: create env file
         run: |
           touch .env
-          echo IOTHUB_DEVICE_CONNECTION_STRING=${{ secrets.IOTHUB_DEVICE_CONNECTION_STRING }} >> .env
+          echo DEVICE_CONNECTION_STRING=${{ secrets.DEVICE_CONNECTION_STRING }} >> .env
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm ci
+      - run: npm run build

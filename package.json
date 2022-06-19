@@ -1,0 +1,13 @@
+{
+  "name": "iotgyroscopeapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js -o bundle.js"
+  },
+  "dependencies": {
+    "azure-iot-device": "^1.18.0",
+    "azure-iot-device-http": "^1.14.0",
+    "browserify": "^17.0.0"
+  }
+}
