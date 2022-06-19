@@ -1,11 +1,10 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-(function (process){(function (){
 const Protocol = require('azure-iot-device-http').Http;
 // const Client = require('azure-iot-device-http').clientFromConnectionString;
 const Client = require('azure-iot-device').Client;
 const Message = require('azure-iot-device').Message;
-const connectionString = process.env.DEVICE_CONNECTION_STRING;
-// const connectionString = "";
+// const connectionString = process.env.DEVICE_CONNECTION_STRING;
+const connectionString = "HostName=xelaaziothub.azure-devices.net;DeviceId=myPhone;SharedAccessKey=c5I3hBNgT2JLQVTj9BuVmOzoTXu6+lOJKihc0NwO1ic=";
 let client = Client.fromConnectionString(connectionString, Protocol);
 // var client = clientFromConnectionString(connectionString);
 var fire = false;
@@ -60,8 +59,7 @@ function shoot() {
 document.getElementById('info').addEventListener('click', event => shoot());
 
 window.addEventListener('deviceorientation', handleOrientation);
-}).call(this)}).call(this,require('_process'))
-},{"_process":299,"azure-iot-device":106,"azure-iot-device-http":105}],2:[function(require,module,exports){
+},{"azure-iot-device":106,"azure-iot-device-http":105}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
