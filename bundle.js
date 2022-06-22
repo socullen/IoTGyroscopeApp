@@ -9,10 +9,9 @@ let client = Client.fromConnectionString(connectionString, Protocol);
 // var client = clientFromConnectionString(connectionString);
 var fire = false;
 var direc = 0;
-var output = document.querySelector('.output');
 var left = document.querySelector('.left');
 var right = document.querySelector('.right');
-var output = document.querySelector('.info');
+var info = document.getElementById('info');
 
 function handleOrientation(event) {
     var r = event.absolute; // Boolean rotation data [true,false]
@@ -20,22 +19,22 @@ function handleOrientation(event) {
     var y = event.gamma; // Rotation around the y axis (top to down) [-90,90]
     var z = event.alpha; // Rotation around the z axis (rotate?) [0,360]
 
-    output.textContent = `beta : ${x}\n`;
+    info.textContent = `beta : ${x}\n`;
 
     console.log("getting into function?")
 
     if (x < -5) {
-        document.getElementById("right").style.background = "rgba(0,47,57,1)";
+        right.style.background = "rgba(0,47,57,1)";
         direc = 2;
         sendMessage();
     } else if (x > 5) {
-        document.getElementById("left").style.background = "rgba(65,0,0,1)";
+        left.style.background = "rgba(65,0,0,1)";
         direc = 1;
         sendMessage();
     }
     else if (x >= -5 && x <= 5) {
-        document.getElementById("left").style.background = "rgba(117, 0, 0, 1)";
-        document.getElementById("right").style.background = "rgba(0, 91, 110, 1)";
+        left.style.background = "rgba(117, 0, 0, 1)";
+        right.style.background = "rgba(0, 91, 110, 1)";
         direc = 0;
     }
 }
@@ -50,13 +49,12 @@ function sendMessage() {
 }
 
 function shoot() {
-    console.log("works??");
+    console.log("shoot");
     fire = true;
-    direc = 1;
     sendMessage();
 }
 
-document.getElementById('info').addEventListener('click', event => shoot());
+document.getElementById('middle').addEventListener('click', event => shoot());
 
 window.addEventListener('deviceorientation', handleOrientation);
 },{"azure-iot-device":106,"azure-iot-device-http":105}],2:[function(require,module,exports){
